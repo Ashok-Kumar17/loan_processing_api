@@ -1,6 +1,6 @@
 # Loan Processing API
 
-A Django REST Framework-based backend system for managing loans and tracking fintech-style loan requests through REST APIs.
+A Django REST Framework-based backend system for managing fintech-style loan requests through REST APIs.
 
 ---
 
@@ -43,6 +43,8 @@ The project was built to strengthen backend engineering and API development skil
 ```bash
 loan-processing-api/
 │
+├── assets/
+│
 ├── loans/
 │   ├── models.py
 │   ├── serializers.py
@@ -62,6 +64,32 @@ loan-processing-api/
 
 ---
 
+## Screenshots
+
+### Loan API Example
+
+![Loan API Response](assets/loan_list_example.png)
+
+---
+
+### Loan List
+
+![Loan List](assets/loan_list.png)
+
+---
+
+### Django Admin Panel
+
+![Admin Panel](assets/admin_panel.png)
+
+---
+
+### Admin Login
+
+![Project Structure](assets/admin_login_page.png)
+
+---
+
 ## API Endpoints
 
 | Method | Endpoint | Description |
@@ -73,13 +101,22 @@ loan-processing-api/
 
 ---
 
+## Engineering Decisions
+
+- Used Django REST Framework for rapid API development
+- Structured APIs modularly using serializers and views
+- Designed backend architecture for future authentication and eligibility integration
+- Used ORM-based models for maintainable database interaction
+
+---
+
 ## Setup Instructions
 
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/loan-processing-api.git
-cd loan-processing-api
+git clone https://github.com/Ashok-Kumar17/loan_processing_api.git
+cd loan_processing_api
 ```
 
 ### Create Virtual Environment
@@ -93,7 +130,7 @@ python -m venv venv
 Windows:
 
 ```bash
-venv\Scripts\activate
+venv\\Scripts\\activate
 ```
 
 Linux/Mac:
