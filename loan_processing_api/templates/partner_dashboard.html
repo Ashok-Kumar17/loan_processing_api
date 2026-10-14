@@ -1,0 +1,67 @@
+{% load static %}<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Partner Dashboard</title>
+  <link rel="stylesheet" href="{% static 'partner/dashboard.css' %}">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="dot"></span> LAMF Partner Desk</div>
+    <div id="who" class="who"></div>
+  </header>
+
+  <main>
+    <section id="login" class="card login">
+      <h1>Sign in</h1>
+      <p class="muted">Mutual fund distributors and RIAs track referred clients and trail commission here.</p>
+      <form id="login-form">
+        <label>Username <input name="username" autocomplete="username" value="partner_demo" required></label>
+        <label>Password <input name="password" type="password" autocomplete="current-password" required></label>
+        <button type="submit">Sign in</button>
+        <p id="login-error" class="error" role="alert"></p>
+      </form>
+      <p class="muted small">Demo login after <code>python manage.py seed_demo</code>: partner_demo / Partner@12345</p>
+    </section>
+
+    <section id="app" hidden>
+      <div class="kpis" id="kpis"></div>
+
+      <div class="grid">
+        <section class="card">
+          <div class="card-head">
+            <h2>Referral links</h2>
+          </div>
+          <form id="link-form" class="inline-form">
+            <input name="label" placeholder="Campaign name, e.g. Diwali WhatsApp" required maxlength="80">
+            <button type="submit">Create link</button>
+          </form>
+          <table>
+            <thead><tr><th>Campaign</th><th>Code</th><th class="num">Sign-ups</th><th class="num">Active lines</th><th></th></tr></thead>
+            <tbody id="links"></tbody>
+          </table>
+        </section>
+
+        <section class="card">
+          <h2>Trail commission by month</h2>
+          <table>
+            <thead><tr><th>Month</th><th class="num">Lines</th><th class="num">Commission</th></tr></thead>
+            <tbody id="months"></tbody>
+          </table>
+        </section>
+      </div>
+
+      <section class="card">
+        <h2>Clients</h2>
+        <table>
+          <thead><tr><th>Client</th><th>Joined</th><th>Via</th><th>Line</th><th class="num">Sanctioned</th><th class="num">Outstanding</th><th class="num">Your commission</th></tr></thead>
+          <tbody id="clients"></tbody>
+        </table>
+      </section>
+    </section>
+  </main>
+
+  <script src="{% static 'partner/dashboard.js' %}"></script>
+</body>
+</html>
